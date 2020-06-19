@@ -32,21 +32,22 @@ export default {
       
       api.modifyClass('controller:topic', Sidebars);
       
-      api.modifyClass('component:topic-navigation', {
-        _performCheckSize() {
-          if (!this.element || this.isDestroying || this.isDestroyed) return;
+      // @TODO: make setting to toggle this behavior.
+      // api.modifyClass('component:topic-navigation', {
+      //   _performCheckSize() {
+      //     if (!this.element || this.isDestroying || this.isDestroyed) return;
 
-          if (settingEnabled('layouts_sidebar_right_enabled', this.get('topic.category'), 'topic')) {
-            const info = this.get('info');
-            info.setProperties({
-              renderTimeline: false,
-              renderAdminMenuButton: true
-            });
-          } else {
-            this._super(...arguments);
-          }
-        }
-      });
+      //     if (settingEnabled('layouts_sidebar_right_enabled', this.get('topic.category'), 'topic')) {
+      //       const info = this.get('info');
+      //       info.setProperties({
+      //         renderTimeline: false,
+      //         renderAdminMenuButton: true
+      //       });
+      //     } else {
+      //       this._super(...arguments);
+      //     }
+      //   }
+      // });
       
       const discoveryController = container.lookup('controller:discovery');
       
